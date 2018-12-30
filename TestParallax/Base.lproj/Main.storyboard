@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5T-My-b2T">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="ObA-R3-oSK">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="q5T-My-b2T" customClass="PageViewController" customModule="TestParallax" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6b-IR-XrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="126"/>
+        </scene>
+        <!--Page Controller-->
+        <scene sceneID="8Uv-hv-WFb">
+            <objects>
+                <viewController storyboardIdentifier="PageController" automaticallyAdjustsScrollViewInsets="NO" id="v1J-wY-hwH" customClass="PageController" customModule="TestParallax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="br8-s5-38b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nice" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-se-PgC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-OG-W6j" userLabel="Vertical separator">
+                                <rect key="frame" x="0.0" y="0.0" width="1" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="Wn8-46-P34"/>
+                                    <constraint firstAttribute="width" constant="1" id="ghV-d1-7m9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWk-PR-hIO">
+                                <rect key="frame" x="16" y="44" width="343" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdR-dc-oEC">
+                                <rect key="frame" x="16" y="610" width="343" height="168"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="140"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HdR-dc-oEC" firstAttribute="leading" secondItem="RWm-Jq-aNF" secondAttribute="leading" constant="16" id="2xD-7z-nG4"/>
+                            <constraint firstItem="7YH-se-PgC" firstAttribute="leading" secondItem="br8-s5-38b" secondAttribute="leading" id="3Zc-3r-Or3"/>
+                            <constraint firstItem="FWk-PR-hIO" firstAttribute="leading" secondItem="RWm-Jq-aNF" secondAttribute="leading" constant="16" id="87R-0c-g8K"/>
+                            <constraint firstItem="7YH-se-PgC" firstAttribute="top" secondItem="br8-s5-38b" secondAttribute="top" id="Bzt-sY-oxk"/>
+                            <constraint firstAttribute="trailing" secondItem="7YH-se-PgC" secondAttribute="trailing" id="DCQ-dp-vVL"/>
+                            <constraint firstItem="Lhd-OG-W6j" firstAttribute="leading" secondItem="br8-s5-38b" secondAttribute="leading" id="Nqu-Oa-96I"/>
+                            <constraint firstItem="RWm-Jq-aNF" firstAttribute="trailing" secondItem="HdR-dc-oEC" secondAttribute="trailing" constant="16" id="SV3-P3-xrD"/>
+                            <constraint firstItem="FWk-PR-hIO" firstAttribute="top" secondItem="RWm-Jq-aNF" secondAttribute="top" id="cPD-Oh-9O1"/>
+                            <constraint firstItem="Lhd-OG-W6j" firstAttribute="top" secondItem="br8-s5-38b" secondAttribute="top" id="f9O-Jr-jqJ"/>
+                            <constraint firstAttribute="bottom" secondItem="7YH-se-PgC" secondAttribute="bottom" id="h8c-5v-C4O"/>
+                            <constraint firstAttribute="bottom" secondItem="Lhd-OG-W6j" secondAttribute="bottom" id="mbZ-Da-sop"/>
+                            <constraint firstItem="RWm-Jq-aNF" firstAttribute="trailing" secondItem="FWk-PR-hIO" secondAttribute="trailing" constant="16" id="p2p-RA-Wa7"/>
+                            <constraint firstItem="RWm-Jq-aNF" firstAttribute="bottom" secondItem="HdR-dc-oEC" secondAttribute="bottom" id="wSK-68-q4n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RWm-Jq-aNF"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageLeadingConstraint" destination="3Zc-3r-Or3" id="03t-JD-LSH"/>
+                        <outlet property="backgroundImageTrailingConstraint" destination="DCQ-dp-vVL" id="x1X-Oi-o9d"/>
+                        <outlet property="backgroundImageView" destination="7YH-se-PgC" id="4Sc-C9-5Ge"/>
+                        <outlet property="cityLabel" destination="FWk-PR-hIO" id="rfq-fj-fzZ"/>
+                        <outlet property="temperatureLabel" destination="HdR-dc-oEC" id="0Lh-td-Qa0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8e-E2-oPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248.8" y="124.8768472906404"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nice" width="375" height="812"/>
+    </resources>
+</document>
