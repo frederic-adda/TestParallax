@@ -17,6 +17,10 @@ class PageController: UIViewController, Storyboarded {
         }
     }
 
+    override var debugDescription: String {
+        return "\(super.debugDescription) - cityName: \(page.cityName)"
+    }
+
     // IBOutlets
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!

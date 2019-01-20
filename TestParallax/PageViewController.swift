@@ -36,6 +36,10 @@ class PageViewController: UIPageViewController {
         return pageDataSource.pageControllers[currentIndex + 1]
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 
     // MARK: - View controller life cycle
 
@@ -107,24 +111,23 @@ extension PageViewController: UIScrollViewDelegate {
             return
         }
 
+        // FIXME: - Dragging issue when dragging continuously with one finger then relaying the drag with another finger
+        // abs(horizontalOffset) > screenWidth/2
+
         // The background image of the current page controller should always be offset by the horizontalOffset (which may be positive or negative)
-        guard let currentPageController = currentPageController else { return }
-        currentPageController.offsetBackgroundImage(by: horizontalOffset)
+        currentPageController?.offsetBackgroundImage(by: horizontalOffset)
 
         if horizontalOffset > 0 { // swiping left, to the next page controller
 
             // The background image of the next page controller starts with an initial offset of (-screenWidth/2), then we apply the (positive) horizontalOffset
-            if let nextPageController = nextPageController {
-                let nextOffset = -screenWidth/2 + horizontalOffset
-                nextPageController.offsetBackgroundImage(by: nextOffset)
-            }
+            let nextOffset = -screenWidth/2 + horizontalOffset
+            nextPageController?.offsetBackgroundImage(by: nextOffset)
+
         } else { // swiping right, to the previous page controller
 
             // The background image of the previous page controller starts with an initial offset of (+screenWidth/2), then we apply the (negative) horizontalOffset
-            if let previousPageController = previousPageController {
-                let previousOffset = screenWidth/2 + horizontalOffset
-                previousPageController.offsetBackgroundImage(by: previousOffset)
-            }
+            let previousOffset = screenWidth/2 + horizontalOffset
+            previousPageController?.offsetBackgroundImage(by: previousOffset)
         }
     }
 }
